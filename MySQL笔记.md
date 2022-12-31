@@ -24,3 +24,10 @@ mylist = [a,b,c,d]
 #列表中的总元素个数： len(mylist)
 #查找列表元素的下标位置： mylist.index(),若不存在会报错
 #列表第一个元素 mylist[1], 最后一个元素: mylist[-1]
+
+#列表的循环遍历：
+#沿用mylist
+#index = 0, while index < len(mylist):
+#element = mylist[index]
+#print(f"列表元素{mylist}")
+#index += 1
