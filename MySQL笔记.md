@@ -50,3 +50,15 @@ String字符串
 #tuple[:] 对元组进行切片，从头切到位，所以直接：  ；步长为1，所以省略. 步长为2时，则为: tuple[::2]
 #按照中括号顺序进行切片，tuple[1:2:2][1:2]
 
+集合
+#集合内重复的元素自动合并，无序，无法以下标定位
+#set.add()添加
+#set.pop()随机取出
+#set.clear()清空集合
+#set1={1,2,3}
+#set2={3,4,5}
+#set3=set1.difference(set2)
+#set3={2,3} difference函数指取出set1中包含但set2中不包含的东西
+#set3=set1.union(set2)合体
+
+#由于集合不支持下标索引，所以无法使用while循环，但可以使用for循环
