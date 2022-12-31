@@ -42,4 +42,5 @@ mylist = [a,b,c,d]
 String字符串
 #字符串可以使用replace函数进行修改， string.replace(old,new)，替换的逻辑为使用新的
 #split函数对字符串进行切割，得到数个新的字符串，并存入列表中，字符串本身不变，得到了一个新的列表对象
-#字符串以space分割，如 ["1" "2" "3"],则切割时使用space,如 split( )
+#字符串以space分割，如 "1 2 3",则切割时使用space,如 split(" ") 记得要加双引号
+#string.strip()去除前后空格， string.strip("12")去除前后12（1和2）
