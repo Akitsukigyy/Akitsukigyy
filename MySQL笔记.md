@@ -31,3 +31,7 @@ mylist = [a,b,c,d]
 #element = mylist[index]
 #print(f"列表元素{mylist}")
 #index += 1
+
+元组
+#元组内的内容无法修改，列表内的内容可以修改
+#元组内若只有一个数据则需要加逗号，如 tuple("hello",)
