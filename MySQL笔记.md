@@ -72,3 +72,9 @@ String字符串
 #位置参数：传递参数时的个数和顺序必须一致，如 def function(1,2,3): print(f"{1}{2}{3},")
 #关键字参数： def function(name, age, gender), print(f'your name is{}, ')
 
+#函数嵌套: def function(compute): result = compute(1,2) print(...)
+#需要再定义compute，有两种方法，一种普通定义，一种lambda定义。普通定义： def compute(a,b): return a+b ; lambda定义(其实不叫定义): 直接调用 function(lambda a,b:a+b)
+#lambda函数为匿名函数，只能使用一次
+
+文件
+
