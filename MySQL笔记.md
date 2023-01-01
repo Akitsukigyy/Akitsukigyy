@@ -62,3 +62,13 @@ String字符串
 #set3=set1.union(set2)合体
 
 #由于集合不支持下标索引，所以无法使用while循环，但可以使用for循环
+#容器排序， sorted(容器) sorted(容器，reverse=true)
+
+#单引号比较字符ascii码大小，例如 'abc' > 'abd' 为 True
+
+
+函数
+#想返回多个值可以用多个变量去接受，如 x,y,z = def abc() return 1,2,3
+#位置参数：传递参数时的个数和顺序必须一致，如 def function(1,2,3): print(f"{1}{2}{3},")
+#关键字参数： def function(name, age, gender), print(f'your name is{}, ')
+
