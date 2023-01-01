@@ -77,4 +77,7 @@ String字符串
 #lambda函数为匿名函数，只能使用一次
 
 文件
+#f=open("文件名","r/a/w", encoding="UTF-8")
+#content = f.read()  ; f.readlines("x行") or f.readline() readline表示读一行，readlines读全部
+#close()
 
