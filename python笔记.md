@@ -79,5 +79,9 @@ String字符串
 文件
 #f=open("文件名","r/a/w", encoding="UTF-8")
 #content = f.read()  ; f.readlines("x行") or f.readline() readline表示读一行，readlines读全部
-#close()
+#close() 必须要close
+#time.sleep(5000)
+#with open("","","") as f: f readlines()   time.close()可以防止忘记close
+# x=f.write() 会将写入内容保存至缓冲区
+#x f.flush() 刷新，此时才将内容写进文档
 
