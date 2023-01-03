@@ -85,3 +85,7 @@ String字符串
 # x=f.write() 会将写入内容保存至缓冲区
 #x f.flush() 刷新，此时才将内容写进文档
 
+#line.strip() strip函数去除行首尾指定字符，默认为空格或换行符
+
+捕获异常
+#try:     except Exception as e: print()   print(e)  else:  finally
