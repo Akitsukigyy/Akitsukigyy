@@ -89,3 +89,13 @@ String字符串
 
 捕获异常
 #try:     except Exception as e: print()   print(e)  else:  finally
+
+
+模块  反复观看p95
+两个.py文件可以调用互相的函数，这种行为就叫引入模块
+main+tab 调出if --name-- = '--main--' 可以测试函数,在另一个.py导入时则不会执行函数
+all = [test.A] 则import*时只导入test A函数
+
+
+
+
