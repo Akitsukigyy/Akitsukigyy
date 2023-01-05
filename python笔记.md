@@ -93,7 +93,7 @@ String字符串
 
 模块  反复观看p95
 两个.py文件可以调用互相的函数，这种行为就叫引入模块
-main+tab 调出if --name-- = '--main--' 可以测试函数,在另一个.py导入时则不会执行函数
+main+tab 调出if --name-- = '--main--' 可以测试函数,在另一个.py导入时则只是导入而不会自动执行函数
 all = [test.A] 则import*时只导入test A函数
 
 pycharm中生成package自带init.py包，有这玩意才算个包，再在这个包上新建python file
