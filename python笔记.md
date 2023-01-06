@@ -173,9 +173,28 @@ line.set_global_opts(
 
 #设置图标标题为gdp show, pos_left表示左移，center表示居中；pos_bottom=1%表示离开底部百分之1
 
+
+
 line.render()                                      #生成图表
 
 #更多配置选项参考 pyecharts.org中的全局配置项
+
+
+数据处理实例：
+import json
+
+f_us=open("D:\programming\pycharm\资料\资料\可视化案例数据\折线图数据\美国.txt","r",encoding="UTF-8")
+us_data=f_us.read()
+#去除开头不规范字符
+
+us_data=us_data.replace("jsonp_1629344292311_69436(","")
+#去除结尾不规范字符
+us_data=us_data[:-2]
+
+us_dict=json.loads(us_data)
+
+print(type(us_dict))
+print(us_dict)
 
 
 
