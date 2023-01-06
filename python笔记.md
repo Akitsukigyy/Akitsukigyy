@@ -153,5 +153,32 @@ import mypackage.module1后需要写mypackage.module1.info()
 
 但如果 from mypakage.module import info 就只要写 info()
 
+图表-折线图
+
+from pyecharts.charts import Line #导入折线图
+from pyecharts.options import TitleOpts，LegendOpts，ToolboxOpts,VisualMapOpts #导入图表选项,图例，工具箱,视觉映射
+
+line = Line()                                       #存入变量
+
+line.add_xaxis(["China", "America", "Britain"])    #设置x轴
+line.add_yaxis("GDP",[30,40,50])                   #设置y轴，注意有标题GDP
+
+line.set_global_opts(
+    title_opts=TitleOpts(title="GDP show", pos_left="center",pos_bottom="1%")，
+    legend_opt=LegendOpts(is show = True),
+    toolbox_opts=ToolboxOpts(is_show=True)，
+    visualmap_opts=VisualMapOpts(is_show=True)
+    
+)
+
+#设置图标标题为gdp show, pos_left表示左移，center表示居中；pos_bottom=1%表示离开底部百分之1
+
+line.render()                                      #生成图表
+
+#更多配置选项参考 pyecharts.org中的全局配置项
+
+
+
+
 
 
