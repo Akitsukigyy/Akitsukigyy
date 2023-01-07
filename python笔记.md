@@ -344,7 +344,10 @@ timeline.add_schema(
 timeline.render("gdp时间线.html")
 
 
+
+
 下面进行动态图的绘制，绘制前需要做一些准备，如拓展列表 sort：
+
 my_list = [["a",33],["b",55],["c",11]]
 
 def choose_sort_key(element):
@@ -356,6 +359,12 @@ my_list.sort(key=choose_sort_key,reverse=True) # 注意不能带括号
 
 print(my_list)
 
+lambda函数方法:
+my_list = [["a",33],["b",55],["c",11]]
+my_list.sort(key=lambda element:element[1], reverse=True)
+print()
+
+P110 反复观看
 
 
 
