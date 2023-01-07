@@ -182,19 +182,112 @@ line.render()                                      #生成图表
 
 数据处理实例：
 import json
+from pyecharts.charts import Line
 
 f_us=open("D:\programming\pycharm\资料\资料\可视化案例数据\折线图数据\美国.txt","r",encoding="UTF-8")
 us_data=f_us.read()
-#去除开头不规范字符
+# 去除开头不规范字符
 
 us_data=us_data.replace("jsonp_1629344292311_69436(","")
-#去除结尾不规范字符
+# 去除结尾不规范字符
 us_data=us_data[:-2]
 
 us_dict=json.loads(us_data)
 
 print(type(us_dict))
 print(us_dict)
+# 获取trend key
+trend_data=us_dict['data'][0]['trend']
+# 获取x轴，取日期数据，至2020年12月31日，根据json网页显示data下标为313的日期为12月31日，切片时为314.多数据时，x轴公用，y轴不共用
+us_x_data=trend_data['updateDate'][:314]
+# 获取y轴
+us_y_data=trend_data['list'][0]['data'][:314]
+
+
+line=Line()
+
+line.add_xaxis(us_x_data)
+
+line.add_yaxis("美国确诊人数", us_y_data) #始终记得y轴要加注释
+
+#生成图标，调用render方法
+line.render()
+
+f_us.close()
+
+#is_piecewise=True，pieces=[{},{}] 是否分段，开启手动校准，匹配颜色
+
+地图实例
+from pyecharts.charts import Map
+from pyecharts.options import VisualMapOpts
+map = Map()
+
+data=[
+    ("上海市",99),
+    ("北京市",199),
+    ("湖北省",299),
+    ("重庆市",399),
+    ("台湾省",499)
+]
+
+map.add("测试地图",data,"china")
+
+map.set_global_opts(
+    visualmap_opts= VisualMapOpts(is_show=True,
+                                  is_piecewise=True,
+                                  pieces=[{"min":1,"max":9,"label":"1-9人", "color":"#CCFFFF"}])  #匹配颜色
+)
+map.render()
+
+P106 实例，反复观看
+
+实例失败:
+import json
+from pyecharts.charts import Map
+from pyecharts.options import *
+
+f = open("D:/programming/pycharm/资料/资料/可视化案例数据/地图数据/疫情.txt","r",encoding="UTF-8")
+data=f.read()
+# 读取后关闭文件
+f.close()
+# 取各个省份的数据并转换成python字典
+data_dict=json.loads(data)
+# 从字典中取出省份的数据
+province_data_list=data_dict["areaTree"][0]["children"]
+data_list=[]
+for province_data in province_data_list:
+    province_name = province_data["name"]
+    province_confirm = province_data["total"]["confirm"]
+    data_list.append((province_name,province_confirm))
+
+
+###############################
+# 以上为数据处理，接下来为制图
+# 创建对象
+map = Map()
+# 添加数据
+map.add("各省确诊人数", data_list,"china")
+# 开始配置全局并定制分段的视觉映射
+map.set_global_opts(
+    title_opts=TitleOpts(title="全国疫情地图"),
+    visualmap_opts = VisualMapOpts(
+        is_show=True,           # 是否显示? True
+        is_piecewise= True,     # 是否分段? True
+        pieces=[
+            {"min":1, "max":99, "label": "1-99人","color": "#CCFFFF"},
+            {"min":100, "max":999, "label": "100-909人","color": "#FFFF99"},
+            {"min":1000, "max":4999, "label": "1000-4999人","color": "#FF9966"},
+            {"min":10000, "max":99999, "label": "10000-99999人","color": "#FF6666"},
+            {"min":100000,  "label": "100000人以上","color": "#CC3333"}
+
+
+        ]
+    )
+)
+
+map.render("全国疫情地图.html")
+
+#无法显示分段，不知为何，后期回来重做
 
 
 
