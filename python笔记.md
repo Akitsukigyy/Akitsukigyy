@@ -290,6 +290,59 @@ map.render("全国疫情地图.html")
 #无法显示分段，不知为何，后期回来重做
 
 
+柱状图则导入 bar
+
+bar=Bar()
+
+bar.add_xaxis()
+
+#还可以加入 bar.reversal_axis() 反转xy轴，此时需要在y轴上把数据也带过来， label_opts=LabelOpts(position = "right")
+
+添加时间线需要导入Timeline
+实例：
+from pyecharts.charts import Bar, Timeline
+from pyecharts.options import LabelOpts
+from pyecharts.globals import ThemeType # 给时间图表加入主题
+# 构建bar1
+bar1 = Bar()
+bar1.add_xaxis(["中国","美国","英国"])
+bar1.add_yaxis("GDP",[30,20,10],label_opts=LabelOpts("right"))
+bar1.reversal_axis()
+
+# 构建bar2
+bar2 = Bar()
+bar2.add_xaxis(["中国","美国","英国"])
+bar2.add_yaxis("GDP",[40,25,15],label_opts=LabelOpts("right"))
+
+bar2.reversal_axis()
+# 构建bar3
+bar3 = Bar()
+bar3.add_xaxis(["中国","美国","英国"])
+bar3.add_yaxis("GDP",[50,30,20],label_opts=LabelOpts("right"))
+
+bar3.reversal_axis()
+
+# 构建时间线对象
+timeline=Timeline({"theme":ThemeType.DARK})  # 构建对象并赋予主题
+# 时间线内添加时间线对象
+timeline.add(bar1, "点位1")
+timeline.add(bar2, "点位2")
+timeline.add(bar3, "点位3")
+
+
+
+# 自动播放设置
+timeline.add_schema(
+    play_interval= 1000,    # 播放间隔1000毫秒
+    is_auto_play=True,      # 自动播放
+    is_loop_play=True,      # 自动循环
+    is_timeline_show=True   # 显示时间轴
+
+
+)
+# 绘图用时间线对象而不是bar对象
+timeline.render("gdp时间线.html")
+
 
 
 
