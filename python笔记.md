@@ -366,6 +366,36 @@ print()
 
 P110 反复观看
 
+构建对象：
+
+class student:
+    name = None
+
+    def say_hi(self):     # class中的函数就是方法了，定义方法时会自动加self
+        print(f"名字为{self.name}")    # 调用类内部的参数时要加self.
+
+stu = student()
+stu.name="Aki"
+stu.say_hi()              # 不用加self
+
+#想要访问成员属性，必须要加 self.xxx
+
+class student:
+    name = None
+
+    def say_hi(self):
+        print(f"名字为{self.name}")
+    
+    def say_hi2(self,msg):
+        print(f"{self.name},{msg}")
+
+stu = student()
+stu.name="Aki"
+stu.say_hi()
+stu.say_hi2("nice!")
+
+# 定义sayhi2时
+
 
 
 
