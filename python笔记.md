@@ -394,7 +394,36 @@ stu.name="Aki"
 stu.say_hi()
 stu.say_hi2("nice!")
 
-# 定义sayhi2时
+# 定义sayhi2时，注意括号内的内容， def xxx(self,变量1，变量2，变量3)，则调用时会出现不同，如 stu.say_hi2("变量1"，“变量2”)， self自动填充
+
+import winsound    winsound.Beep("频率","持续时间")可以让电脑发出小声音，不建议尝试
+
+
+def _init_(self,name,age,tel):
+    self.name=
+    self.age=
+    self.tel=
+    print("Student")
+
+stu=student("name",31,"tel")
+
+例：
+
+class Student:
+    name = None     # 可省略
+    age = None      # 可省略
+    tel = None      # 可省略
+
+    def __init__(self,name,age,tel):
+        self.name = name    # 赋值+定义
+        self.age = age
+        self.tel = tel
+        print("Student类创建对象")
+
+stu = Student("Aki",27,"18217523297")
+print(stu.tel)
+print(stu.age)
+print(stu.name)
 
 
 
