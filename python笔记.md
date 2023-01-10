@@ -426,5 +426,22 @@ print(stu.age)
 print(stu.name)
 
 
+super()表示调用父类对象,可以调用已经被复写的对象
+super().父类()
 
+变量
+
+变量注解：
+
+Var_1: int = 15
+
+my_list: list[int] = [1,2,3]   #最佳表达方法
+my_dict: dict[str,int] = {"number": 11}
+
+alt+enter 可以搜索可导包
+
+def add(a:int,b:int):
+    return x+y           # 可以让pycharm了解你想要做什么 从而
+    
+def func(data:list) -> list:       ->list为对func的注解
 
