@@ -445,3 +445,7 @@ def add(a:int,b:int):
     
 def func(data:list) -> list:       ->list为对func的注解
 
+my_list:list[Union[str,int]] = [1,2,"abc"] # Union 可以对多种数据结构进行注解
+
+P123多看几遍
+
