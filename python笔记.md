@@ -447,5 +447,10 @@ def func(data:list) -> list:       ->list为对func的注解
 
 my_list:list[Union[str,int]] = [1,2,"abc"] # Union 可以对多种数据结构进行注解
 
-P123多看几遍
+P124多看几遍
+
+P124 具体案例查看.py
+
+
+
 
