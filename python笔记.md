@@ -452,5 +452,14 @@ P124多看几遍
 P124 具体案例查看.py
 
 
+conf = SparkConf().setMaster("local[*]").setAppName("test_spark_app")
+
+上下属于一个效果
+
+conf = SparkConf()
+conf.setMaster("local[*]")
+conf..setAppName("test_spark_app")
+
+
 
 
