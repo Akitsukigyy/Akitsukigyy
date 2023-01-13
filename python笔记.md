@@ -461,5 +461,53 @@ conf.setMaster("local[*]")
 conf..setAppName("test_spark_app")
 
 
+pyspark-map 方法
+
+from pyspark import SparkConf, SparkContext
+import os
+os.environ['PYSPARK_PYTHON'] = "D:/programming/pycharm/python/python.exe"    # 这一步帮助pyspark找到python解释器的位置，environ 表示environment环境变量
+
+完整map方法示例:
+
+from pyspark import SparkConf, SparkContext
+import os
+os.environ['PYSPARK_PYTHON'] = "D:/programming/pycharm/python/python.exe"
+# 创建SparkConf类对象
+# setMaster设置运行模式，setAppName设置人物名称
+conf = SparkConf().setMaster("local[*]").setAppName("test_spark_app")
+# 基于SparkConf类对象创建SparkContext对象
+
+sc = SparkContext(conf = conf)
+
+# 打印pyspark运行版本
+
+print(sc.version)
+
+# 停止sparkcontext对象的运行（停止pyspark程序）
+# sc.stop()
+
+# 准备RDD
+rdd = sc.parallelize([1,2,3,4,5])
+# 通过map方法将所有数据乘以10
+def func(data):
+    return data * 10
+rdd2 = rdd.map(func)   # 也可以直接（lambda：x:X*10） 然后将前面的def注释掉
+
+print(rdd2.collect())
+
+结果得到 10-50
+ map 方法就是将 sc.parallelize[1-5]中的1-5传递给 rdd2 = rdd.map(func),具体func自己定义  # 对rdd内的元素进行逐个处理产生新的rdd
+ 
+ 链式函数：
+ rdd.map().map().map()
+ 
+ flatmap和map非常相似，但多了个接触嵌套的功能 [[]123],[123],[123]] 变为[123,123,123]
+ 
+ 
+ 例如：
+ rdd = sc.parallelized(["itheima,itcast,666","itheima1,itheima2,itheima3","itheima4,itheima5,itheima6 "])
+ rdd2 = rdd.map(lambda x:x.split(" "))    map会报错，flatmap不会
+ 
+ print后全部拆出来，"itheima","itcast","666"
 
 
