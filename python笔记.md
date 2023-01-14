@@ -509,5 +509,34 @@ print(rdd2.collect())
  rdd2 = rdd.map(lambda x:x.split(" "))    map会报错，flatmap不会
  
  print后全部拆出来，"itheima","itcast","666"
+ 
+ 
+ KV型RDD， 指二元元组   KV - Key Value 
+ 对应 [('a',1),('b',2),('c',3)]
+ 
+ 例子：
+ # 准备rdd
+
+rdd3 = sc.parallelize([('男',99),('男',88),('女',99),('女',66)])
+
+# 求男生女生两组的成绩之和
+rdd4 = rdd3.reduceByKey(lambda a,b: a + b)
+print(rdd4.collect())
+
+得到
+[('男', 187), ('女', 165)]
+
+P145 案例再看
+
+rdd.map(lambda word:(word,1))  可以将'it' 变为 （'it',1）
+
+
+filter 方法取 true，舍弃false
+例子：
+rdd = sc.parallelize([1,2,3,4,5])
+rdd.filter(lambda x:True if(x % 2 == 1) else False)
+得到 [2,4]
+
+
 
 
