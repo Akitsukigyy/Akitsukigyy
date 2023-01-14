@@ -537,6 +537,10 @@ rdd = sc.parallelize([1,2,3,4,5])
 rdd.filter(lambda x:True if(x % 2 == 1) else False)
 得到 [2,4]
 
+distinct 方法去重
+rdd.distinct() 无需传参
+直接print(rdd.distinct().collect())即可
+
 
 
 
