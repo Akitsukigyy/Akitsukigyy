@@ -624,4 +624,89 @@ print("需求3结果为：",result3)
 file_rdd.map(lambda x:x.split("\t")).\
     map(lambda x:{"time": x[0],"user_id":x[1],"key_word":x[2],"rank1":x[3],"rank2":x[4],"url":x[5]}).\
     saveAsTextFile("D/output_json")
+    
+    
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+text="only YOU Loving yoU,你是我的唯一，jUst YoU,我能等你下课吗？能不能一起去逛街？达能小王子"
+ 
+#大小写转换
+text.upper() #大写
+text.lower() #小写
+text.title()#首字母大写
+text.capitalize()#第一个字母大写
+text.swapcase()#大小写对调
+ 
+#字符串的搜索
+text.count("o")#搜索并统计"o"出现的次数
+text.count("o",28)#搜索并统计，从第28位开始，"o"出现的次数
+text.startswith("only")#text以"only"开通
+text.startswith("only",2,10)#text的第3-9个字符以"only"开通
+text.find("you")#查找you
+text.replace("u","V",2)
+ 
+#填充或者剔除某些信息
+ 
+"1999".rjust(10,"$")#前一个字符代表填充后字符串的总长度
+"1999".rjust(5,"$")
+"1999".zfill(9)#用0填充，类似 "1999".rjust(9,"0")
+"1999".rjust(9,"0")
+"1999".center(50) #在左右两边都假设空格
+"   1999   ".strip()#去重左右两边的空格
+"1999".strip("9")#去重左右两边的"9"
+" 1999 ".strip("9")#去重左右两边的"9",两边是空格没有9
+ 
+#字符串的分割与合并
+ 
+text.replace("能",",")
+text1=text.replace("能","\n")
+print(text1)
+print(text.replace("能","\n"))
+text.split("能")#以"能"为结点把str拆成一个字列表
+text.partition("能") #以"能"为结点把str拆成一个字元组
+text.rpartition("能")
+text1.splitlines()#识别空行进行分割
+text1.split("\n")#同上分割空行
+"@".join(text)#把@插入到str的每一个字符中
+"12345".join("  ")#重复并拼接
+
 
