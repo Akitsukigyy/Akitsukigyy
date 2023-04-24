@@ -1,0 +1,2 @@
+#偷懒循环
+current_users_L=[i.lower() for i in current_users]
