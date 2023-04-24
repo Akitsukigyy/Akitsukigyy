@@ -1,2 +1,7 @@
 #偷懒循环
 current_users_L=[i.lower() for i in current_users]
+
+
+#46题笔记
+d = {'pizza': 10, 'rice': 2, 'yogurt': 5} 
+print(d.get(input(), 8))
